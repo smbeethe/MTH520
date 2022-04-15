@@ -93,7 +93,7 @@ print(prob6a())
 
 """ A function that does the same as problem 6A, but utilizing numpy """
 
-import numpy as np 
+import numpy as np
 
 def prob6b():
     A = ([1, 2, 3, 4, 5, 6, 7])
@@ -106,4 +106,6 @@ def prob6b():
 print(prob6b())
 
     
+
+
 
