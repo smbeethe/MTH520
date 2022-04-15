@@ -21,7 +21,7 @@ print(prob1(L))
 
 #%%
 # Problem 2
-import sys
+
 
 def prob2():
     """Determine which Python objects are mutable and which are immutable.
@@ -68,14 +68,10 @@ def prob2():
     set_2.add(4)
     print(set_2 == set_1)
     if set_2 == set_1:
-        print("Sets are mutable")
+        return ("Sets are mutable")
     else:
-        print("Sets are immutable")
+        return ("Sets are immutable")
     
-    sys.exit()
-    return prob2()
-
-#Had to add the sys.exit() line because the function was recursive and sysexit is the easiest fix
 prob2()
 
 #%%
@@ -91,10 +87,10 @@ import calculator as calc
 import math
 
 #def sum(a, b):
-#    return a+b
+    #return a+b
 #
 #def product(a, b):
-#    return a*b
+    #return a*b
 
 def hypot(a, b):
     """Calculate and return the length of the hypotenuse of a right triangle.
@@ -116,12 +112,11 @@ def hypot(a, b):
 
 print(hypot(3, 4))
    
-  
 
 #%%
 # Problem 4
 
-from itertools import chain, combinations
+from itertools import combinations, chain
 
 def power_set(A):
     """Use itertools to compute the power set of A.
@@ -132,14 +127,12 @@ def power_set(A):
     Returns:
         (list(sets)): The power set of A as a list of sets.
     """
-    #A = {1, 2, 3}
-    return chain.from_iterable(combinations(iterable, r) for r in range(len(s)+1)
-
+    B = list(A)
+    return chain.from_iterable(combinations(B, A) for A in range(len(B) +1))
     
-#    raise NotImplementedError("Problem 4 Incomplete")
-
-A = {1, 2, 3, 4, 5}
-print(power_set(A))
+    raise NotImplementedError("Problem 4 Incomplete")
+    
+print(list(power_set("abc")))    
 
 #%%
 #Don't do this one!
