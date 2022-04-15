@@ -1,8 +1,8 @@
 # python_intro.py
 """Python Essentials: Introduction to Python.
-<Name>
-<Class>
-<Date>
+Sarah Beethe
+MTH 520
+4/15/2022
 """
 
 #Problem 1

@@ -1,8 +1,8 @@
 # standard_library.py
 """Python Essentials: The Standard Library.
-<Name>
-<Class>
-<Date>
+Sarah Beethe
+MTH 520
+4/15/2022
 """
 
 
