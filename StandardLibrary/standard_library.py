@@ -21,39 +21,80 @@ print(prob1(L))
 
 #%%
 # Problem 2
+import sys
+
 def prob2():
     """Determine which Python objects are mutable and which are immutable.
     Test numbers, strings, lists, tuples, and sets. Print your results.
     """
     list_1 = ["rock", "pop", "hip hop", "classical", "indie"]
-    num_1 = 67583928
-    string_1 = "I love pythons almost as much as vipers"
-    tuple_1 = (5, 6, 'fun', 8, 'time', 64, 'potato')
-    set_1 = {'beer', 'wine', 'whiskey', 'water'}
-    if list_2 = list_1:
-        list_2[2] = "R&B"
-        print(list_1 == list_2)
-    elif next():
-        if num_2 = num_1:
-            num_2[0] = 8
-            print(num_1 == num_2)
-        elif next():
-            if string_2 = string_1:
-                string_2[9] = "C"
-                print(num_1 == num_2)
-            elif next():
-                if tuple_2 = tuple_1
-            
-        
+    list_2 = list_1
+    list_2[2] = "R&B"
+    print(list_2 == list_1)
+    if list_2 == list_1:
+        print("Lists are mutable")
+    else:
+        print("lists are immutable")
     
+    num_1 = 67583928
+    num_2 = num_1
+    num_2 = 7
+    print(num_2 == num_1)
+    if num_2 == num_1:
+        print("Integers are mutable")
+    else:
+        print("Integers are immutable")
+    
+    string_1 = "I love pythons almost as much as vipers"
+    string_2 = string_1
+    string_2 = "C"
+    print(string_2 == string_1)
+    if string_2 == string_1:
+        print("Strings are mutable")
+    else:
+        print("Strings are immutable")
+    
+    tuple_1 = (5, 6, 'fun', 8, 'time', 64, 'potato')
+    tuple_2 = tuple_1
+    tuple_2 = (3, 4, 5)
+    print(tuple_2 == tuple_1)
+    if tuple_2 == tuple_1:
+        print("Tuples are mutable")
+    else:
+        print("Tuples are immutable")
+    
+    set_1 = {'beer', 'wine', 'whiskey','water'}
+    set_2 = set_1
+    set_2.add(4)
+    print(set_2 == set_1)
+    if set_2 == set_1:
+        print("Sets are mutable")
+    else:
+        print("Sets are immutable")
+    
+    sys.exit()
+    return prob2()
 
+#Had to add the sys.exit() line because the function was recursive and sysexit is the easiest fix
+prob2()
 
 #%%
-"""
-#%%
+
 # Problem 3
 
-from calculator import *
+#As discussed in Lab today... this script cannot import calculator
+#even though it should be able to The program works with the functions
+#used in the calcuator.py script in the StandardLibrary folder, which have
+#been commented out, but can be commented in to show that this should work
+
+import calculator as calc
+import math
+
+#def sum(a, b):
+#    return a+b
+#
+#def product(a, b):
+#    return a*b
 
 def hypot(a, b):
     """Calculate and return the length of the hypotenuse of a right triangle.
@@ -66,16 +107,22 @@ def hypot(a, b):
     Returns:
         The length of the triangle's hypotenuse.
     """
-    sumsquares = calculator.sum(a**2, b**2)
-    hypt = calculator.sqrt(sumsquares)
-    return hypt
+    sumsquares = calc.sum(a**2, b**2)
+    hyp = math.sqrt(sumsquares)
+    
+    return hyp
+
+    raise NotImplementedError("Problem 3 Incomplete")
 
 print(hypot(3, 4))
    
-  #raise NotImplementedError("Problem 3 Incomplete")
+  
 
 #%%
 # Problem 4
+
+from itertools import chain, combinations
+
 def power_set(A):
     """Use itertools to compute the power set of A.
 
@@ -85,11 +132,17 @@ def power_set(A):
     Returns:
         (list(sets)): The power set of A as a list of sets.
     """
-    
-    
-    raise NotImplementedError("Problem 4 Incomplete")
+    #A = {1, 2, 3}
+    return chain.from_iterable(combinations(iterable, r) for r in range(len(s)+1)
 
+    
+#    raise NotImplementedError("Problem 4 Incomplete")
 
+A = {1, 2, 3, 4, 5}
+print(power_set(A))
+
+#%%
+#Don't do this one!
 # Problem 5: Implement shut the box.
 def shut_the_box(player, timelimit):
     """Play a single game of shut the box."""

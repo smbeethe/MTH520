@@ -11,8 +11,11 @@ if __name__ == "__main__":
 #%%
 #Problem 2
 """" a classic hello world intro script """
+def prob2():
+    print("Hello, World") #printing a string to the terminal window
 
-print("Hello, World") #printing a string to the terminal window
+prob2()
+
 
 #%%
 #Problem 3
