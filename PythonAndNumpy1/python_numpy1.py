@@ -83,8 +83,8 @@ def prob6a():
     A = [1, 2, 3, 4, 5, 6, 7]
     B = [5, 5, 5, 5, 5, 5, 5]
     for i, j in zip(A, B):
-        product.append(sum([i*j])
-        add.append(sum(i, j)
+        product.append(sum(i*j))
+        add.append(i + j)
         five.append(5 * i)
     return(product, add, five)
     
@@ -99,7 +99,7 @@ import numpy as np
 
 def prob6b():
     A = np.array([1, 2, 3, 4, 5, 6, 7])
-    B = np.array([95, 5, 5, 5, 5, 5, 5])
+    B = np.array([5, 5, 5, 5, 5, 5, 5])
     product = np.dot(A, B)
     add = A+B
     five = np.multiply(5, A)

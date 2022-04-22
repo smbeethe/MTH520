@@ -46,23 +46,31 @@ def alt_harmonic(n):
     """Return the partial sum of the first n terms of the alternating
     harmonic series. Use this function to approximate ln(2).
     """
-    odd = np.zeros(n)
-    even = np.zeros(n//2)
-    for i in range (0, n):
-        odd[i] = 1/(2*(i+1))
-    for i in range (0, n//2):
-        even[i] = -1/(2*(i+2))
-    s = sum(odd) + sum(even)
-    return s    
+    return(sum(((-1)**(i+1))/i) for i in range (1, n))
+    #odd = np.zeros(n)
+    #even = np.zeros(n//2)
+    #for i in range (0, n):
+     #   odd[i] = 1/(2*(i+1))
+    #for i in range (0, n//2):
+    #    even[i] = -1/(2*(i+2))
+    #s = sum(odd) + sum(even)
+    #return s    
     
     raise NotImplementedError("Problem 4 Incomplete")
+    
+print(alt_harmonic(500000))
 
-print(alt_harmonic(5000000))
+#L = np.log(2)
+#print(L)"""
+
 
 #Need to figure out how to approdximate first 500,000 temrs to ln(2) at 5 decimal places
 
 
 #%%
+
+import numpy as np
+
 def prob5(A):
     """Make a copy of 'A' and set all negative entries of the copy to 0.
     Return the copy.
@@ -72,7 +80,17 @@ def prob5(A):
         >>> prob4(A)
         array([0, 0, 3])
     """
+    B = np.array(A)
+    mask = B < 0 
+    B[mask] = 0
+    
+    return B
+    
     raise NotImplementedError("Problem 5 Incomplete")
+        
+print(prob5([-1, -3, 3]))
+    
+    
 
 #%%
 def prob6():
@@ -83,7 +101,15 @@ def prob6():
     where I is the 3x3 identity matrix and each 0 is a matrix of all zeros
     of the appropriate size.
     """
-    raise NotImplementedError("Problem 6 Incomplete")
+    A = np.array([[0, 2, 4], [1, 3, 5]])
+    B = np.array([[3, 0, 0], [3, 3, 0], [3, 3, 3]])
+    C = np.array([[-2, 0, 0], [0, -2, 0], [0, 0, -2]])
+    
+    return A, B, C
+
+print(prob6())
+    
+   # raise NotImplementedError("Problem 6 Incomplete")
 
 #%%
 #DO NOT DO
