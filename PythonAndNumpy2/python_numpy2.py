@@ -7,10 +7,10 @@ MTH 520
 #%%
 #Problem 1
 def isolate(a, b, c, d, e):
-    print(a, "     ", b, "     ", c, d, e)
-    
+    return(a, "     ", b, "     ", c, d, e)
     raise NotImplementedError("Problem 1 Incomplete")
-isolate(1, 2, 3, 4, 5)
+print(isolate(1, 2, 3, 4, 5))
+
 #%%
 #Problem 2
 def first_half(string):
@@ -46,25 +46,13 @@ def alt_harmonic(n):
     """Return the partial sum of the first n terms of the alternating
     harmonic series. Use this function to approximate ln(2).
     """
-    return(sum(((-1)**(i+1))/i) for i in range (1, n))
-    #odd = np.zeros(n)
-    #even = np.zeros(n//2)
-    #for i in range (0, n):
-     #   odd[i] = 1/(2*(i+1))
-    #for i in range (0, n//2):
-    #    even[i] = -1/(2*(i+2))
-    #s = sum(odd) + sum(even)
-    #return s    
+    N = sum([(-1)**(i+1)/float(i) for i in range (1, n)])
+    return N
     
     raise NotImplementedError("Problem 4 Incomplete")
-    
 print(alt_harmonic(500000))
 
-#L = np.log(2)
-#print(L)"""
 
-
-#Need to figure out how to approdximate first 500,000 temrs to ln(2) at 5 decimal places
 
 
 #%%
@@ -104,8 +92,17 @@ def prob6():
     A = np.array([[0, 2, 4], [1, 3, 5]])
     B = np.array([[3, 0, 0], [3, 3, 0], [3, 3, 3]])
     C = np.array([[-2, 0, 0], [0, -2, 0], [0, 0, -2]])
-    
-    return A, B, C
+    AT = np.transpose(A)
+    I = np.identity(3)
+    Z1 = np.zeros((3,3))
+    Z2 = np.zeros((2,2))
+    Z32 = np.zeros((3, 2))
+    Z23 = np.zeros((2, 3))
+    col1 = np.vstack((Z1, A, B))
+    col2 = np.vstack((AT, Z2, Z32))
+    col3 = np.vstack((I, Z23, C))
+    block = np.hstack((col1, col2, col3))
+    return block
 
 print(prob6())
     
@@ -125,12 +122,16 @@ print(prob6())
 #    """
 #    raise NotImplementedError("Problem 7 Incomplete")
 #%%
+#DONOTDO
 
-def prob8():
-    """Given the array stored in grid.npy, return the greatest product of four
-    adjacent numbers in the same direction (up, down, left, right, or
-    diagonally) in the grid.
-    """
-    raise NotImplementedError("Problem 8 Incomplete")
+#def prob8():
+ #   """Given the array stored in grid.npy, return the greatest product of four
+  #  adjacent numbers in the same direction (up, down, left, right, or
+   # diagonally) in the grid.
+    #"""
+ #   raise NotImplementedError("Problem 8 Incomplete")
+    
+
+    
 
 
