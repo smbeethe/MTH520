@@ -7,7 +7,7 @@ MTH 520
 #%%
 #Problem 1
 def isolate(a, b, c, d, e):
-    print(a, "     ", b, "     ", c, d, e)
+    print(a, "   ", b, "   ", c, d, e)
 
 isolate(1, 2, 3, 4, 5)
 
