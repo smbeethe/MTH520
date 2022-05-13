@@ -68,9 +68,10 @@ def prob2():
     set_2.add(4)
     print(set_2 == set_1)
     if set_2 == set_1:
-        return ("Sets are mutable")
+        print("Sets are mutable")
     else:
-        return ("Sets are immutable")
+        print("Sets are immutable")
+    
     
 prob2()
 
@@ -103,7 +104,9 @@ def hypot(a, b):
     Returns:
         The length of the triangle's hypotenuse.
     """
-    sumsquares = calc.sum(a**2, b**2)
+    sqa = calc.product(a, a)
+    sqb = calc.product(b, b)
+    sumsquares = calc.sum(sqa, sqb)
     hyp = math.sqrt(sumsquares)
     
     return hyp
@@ -127,10 +130,11 @@ def power_set(A):
     Returns:
         (list(sets)): The power set of A as a list of sets.
     """
-    B = list(A)
-    return chain.from_iterable(combinations(B, A) for A in range(len(B) +1))
+
+    B = list(A)  
+    return [set (x) for x in chain(*[combinations(B, A) for A in range(len(B) +1)])]
     
-    raise NotImplementedError("Problem 4 Incomplete")
+ #   raise NotImplementedError("Problem 4 Incomplete")
     
 print(list(power_set("abc")))    
 
