@@ -7,9 +7,9 @@ MTH 520
 #%%
 #Problem 1
 def isolate(a, b, c, d, e):
-    return(a, "     ", b, "     ", c, d, e)
-    raise NotImplementedError("Problem 1 Incomplete")
-print(isolate(1, 2, 3, 4, 5))
+    print(a, "     ", b, "     ", c, d, e)
+
+isolate(1, 2, 3, 4, 5)
 
 #%%
 #Problem 2
@@ -33,7 +33,7 @@ def list_ops():
     list.pop(1)
     list.sort(reverse = True)
     list[list.index("eagle")] = "hawk"
-    list.append("hunter")
+    list[3] = list[3] + "hunter"
     return list
     raise NotImplementedError("Problem 3 Incomplete")
 print(list_ops())
@@ -46,7 +46,7 @@ def alt_harmonic(n):
     """Return the partial sum of the first n terms of the alternating
     harmonic series. Use this function to approximate ln(2).
     """
-    N = sum([(-1)**(i+1)/float(i) for i in range (1, n)])
+    N = sum([(-1)**(i+1)/float(i) for i in range (1, n+1)])
     return N
     
     raise NotImplementedError("Problem 4 Incomplete")
