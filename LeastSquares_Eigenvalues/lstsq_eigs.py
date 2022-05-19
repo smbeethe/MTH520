@@ -1,8 +1,8 @@
 # lstsq_eigs.py
 """Volume 1: Least Squares and Computing Eigenvalues.
-<Name>
-<Class>
-<Date>
+<Sarah Beethe>
+<MTH 520>
+<05/19/22>
 """
 
 # (Optional) Import functions from your QR Decomposition lab.
@@ -12,7 +12,7 @@
 
 import numpy as np
 from matplotlib import pyplot as plt
-
+import scipy as sp
 
 # Problem 1
 def least_squares(A, b):
@@ -26,6 +26,15 @@ def least_squares(A, b):
     Returns:
         x ((n, ) ndarray): The solution to the normal equations.
     """
+   A = np.ndarray() 
+#%%
+w, h = 8, 5;
+Matrix = [[for x in range(w)] for y in range(h)] 
+print(Matrix)
+
+#%%    
+    
+    
     raise NotImplementedError("Problem 1 Incomplete")
 
 # Problem 2
