@@ -77,16 +77,13 @@ print('You owe', tax_liability(500000), 'in taxes')
 product, sum and 5*A. """
 
 def prob6a():
-    product = []
-    add = []
-    five = []
     A = [1, 2, 3, 4, 5, 6, 7]
     B = [5, 5, 5, 5, 5, 5, 5]
     for i, j in zip(A, B):
-        product.append(sum(i*j))
-        add.append(i + j)
-        five.append(5 * i)
-    return(product, add, five)
+        product = sum(float(i*j))
+        add = sum(float(i, j))
+        five = 5 * i
+    return(product, addition)
     
 print(prob6a())
 
