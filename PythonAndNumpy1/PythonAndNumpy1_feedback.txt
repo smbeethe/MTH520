@@ -56,3 +56,32 @@ TypeError while loading 'python_numpy1.py': 'int' object is not iterable
 
 -------------------------------------------------------------------------------
 
+05/20/22 17:23
+
+TypeError while loading 'python_numpy1.py': 'float' object is not iterable
+
+-------------------------------------------------------------------------------
+
+05/20/22 17:40
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (10 points):
+Score += 10
+
+Problem 5 (10 points):
+Score += 10
+
+Problem 6 (20 points):
+Score += 20
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 50/50 = 100.0%
+
+Excellent!
+
+-------------------------------------------------------------------------------
+
