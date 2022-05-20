@@ -39,17 +39,32 @@ print(least_squares(A, b))
 
 #%%    
 # Problem 2
+import numpy as np
+import matplotlib as plt
+
 def line_fit():
     """Find the least squares line that relates the year to the housing price
     index for the data in housing.npy. Plot both the data points and the least
     squares line.
     """
     
-    a, b1 = np.load('housing.npy').T
-    A = np.column_stack((a, np.ones_like(a)))
+    a, b = np.load(r"\\wsl.localhost\Ubuntu\home\beethes\PythonEssentials\LeastSquares_Eigenvalues\housing.npy").T
+    A = np.column_stack((a)).T
+    B = b.T
+    L = (least_squares(A, b)[0])
     print(A)
-    print(b)
-    print(least_squares(A, b))
+    print(B)
+    q = (least_squares(A, B))
+    y = q*x
+    print(q)
+   
+
+    
+    x_ax = np.linspace(0, 16, 100) 
+    plt.pyplot.scatter(A, B)
+    plt.pyplot(x_ax, y)
+    plt.show()
+    
     #x_ax = first column of A
     #y_ax = b
   #  plt.plot(x_ax, y_ax)
