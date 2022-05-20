@@ -133,49 +133,42 @@ prob4()
 #%% DO NOT DO
 # Problem 5
 #def prob5():
-    """Visualize the data in FARS.npy. Use np.load() to load the data, then
-    create a single figure with two subplots:
-        1. A scatter plot of longitudes against latitudes. Because of the
-            large number of data points, use black pixel markers (use "k,"
-            as the third argument to plt.plot()). Label both axes.
-        2. A histogram of the hours of the day, with one bin per hour.
-            Label and set the limits of the x-axis.
-    """
+  #  """Visualize the data in FARS.npy. Use np.load() to load the data, then
+   # create a single figure with two subplots:
+    #    1. A scatter plot of longitudes against latitudes. Because of the
+     ##      as the third argument to plt.plot()). Label both axes.
+       ##    Label and set the limits of the x-axis.
+   # """
     
     
     #raise NotImplementedError("Problem 5 Incomplete")
 
 #%%
 # Problem 6
-def prob6():
-    """Plot the function f(x,y) = sin(x)sin(y)/xy on the domain
-    [-2pi, 2pi]x[-2pi, 2pi].
-        1. Create 2 subplots: one with a heat map of f, and one with a contour
-            map of f. Choose an appropriate number of level curves, or specify
-            the curves yourself.
-        2. Set the limits of each subplot to [-2pi, 2pi]x[-2pi, 2pi].
-        3. Choose a non-default color scheme.
-        4. Add a colorbar to each subplot.
-    """
-    x = np.linspace(-2*np.pi, 2*np.pi, 100)
-    y = x.copy()
-    X, Y = np.meshgrid(x, y)
-    Z = (np.sin(X) * np.sin(Y)) // (x * y)
-    
-    plt.subplot(121)
-    plt.pcolormesh(X, Y, Z, cmap = "viridis", shading = 'auto')
-    plt.colorbar()
-    plt.xlim(-2*np.pi, 2*np.pi)
-    plt.ylim(-2*np.pi, 2*np.pi)
-    
-    plt.subplot(122)
-    plt.contour(X, Y, Z, 10, cmap = "viridis")
-    plt.colorbar()
-    
-    plt.tight_layout(pad = 0.4)
-    
-    plt.show()
+#def prob6():
+ #   """Plot the function f(x,y) = sin(x)sin(y)/xy on the domain
+  #  [-2pi, 2pi]x[-2pi, 2pi].
+   #     1. Create 2 subplots: one with a heat map of f, and one with a contour
+    #        map of f. Choose an appropriate number of level curves, or specify
+     ###34. Add a colorbar to each subplot.
+ #   """
+  ###X, Y = np.meshgrid(x, y)
+   # Z = (np.sin(X) * np.sin(Y)) // (x * y)
+   # 
+   # plt.subplot(121)
+#    plt.pcolormesh(X, Y, Z, cmap = "viridis", shading = 'auto')
+##    plt.colorbar()
+#    plt.xlim(-2*np.pi, 2*np.pi)
+#    plt.ylim(-2*np.pi, 2*np.pi)
+#    
+#    plt.subplot(122)
+#    plt.contour(X, Y, Z, 10, cmap = "viridis")
+#    plt.colorbar()
+#    
+#    plt.tight_layout(pad = 0.4)
+#    
+#    plt.show()
 
-prob6()
-    
+#prob6()
+#    
 
