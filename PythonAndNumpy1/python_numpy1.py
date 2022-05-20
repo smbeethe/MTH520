@@ -76,14 +76,16 @@ print('You owe', tax_liability(500000), 'in taxes')
 """ A function that defines two vectors (A and B) as lists and returns their 
 product, sum and 5*A. """
 
+import numpy as np
+
 def prob6a():
-    A = [1, 2, 3, 4, 5, 6, 7]
-    B = [5, 5, 5, 5, 5, 5, 5]
+    A = np.array([1, 2, 3, 4, 5, 6, 7])
+    B = np.array([5, 5, 5, 5, 5, 5, 5])
     for i, j in zip(A, B):
-        product = sum(float(i*j))
-        add = sum(float(i, j))
-        five = 5 * i
-    return(product, addition)
+        product = [np.dot(A, B)]
+        add = [A + B]
+        five = [np.dot(A, 5)]
+    return(product, add, five)
     
 print(prob6a())
 
