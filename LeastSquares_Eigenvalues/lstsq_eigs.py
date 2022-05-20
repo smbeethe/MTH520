@@ -5,6 +5,7 @@
 <05/19/22>
 """
 
+
 # (Optional) Import functions from your QR Decomposition lab.
 # import sys
 # sys.path.insert(1, "../QR_Decomposition")
@@ -12,7 +13,7 @@
 
 import numpy as np
 from matplotlib import pyplot as plt
-import scipy as sp
+from scipy import linalg
 
 # Problem 1
 def least_squares(A, b):
@@ -26,26 +27,37 @@ def least_squares(A, b):
     Returns:
         x ((n, ) ndarray): The solution to the normal equations.
     """
-   A = np.ndarray() 
-#%%
-w, h = 8, 5;
-Matrix = [[for x in range(w)] for y in range(h)] 
-print(Matrix)
+    q, r = linalg.qr(A, mode = 'economic')
+    y = np.dot(q.T, b)
+    x = linalg.solve(r, y)
+    return x
+    
+A = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+b = np.array([3, 2, 1])
+print(least_squares(A, b))
+
 
 #%%    
-    
-    
-    raise NotImplementedError("Problem 1 Incomplete")
-
 # Problem 2
 def line_fit():
     """Find the least squares line that relates the year to the housing price
     index for the data in housing.npy. Plot both the data points and the least
     squares line.
     """
-    raise NotImplementedError("Problem 2 Incomplete")
+    
+    a, b1 = np.load('housing.npy').T
+    A = np.column_stack((a, np.ones_like(a)))
+    print(A)
+    print(b)
+    print(least_squares(A, b))
+    #x_ax = first column of A
+    #y_ax = b
+  #  plt.plot(x_ax, y_ax)
+    
+line_fit()   
+ #   raise NotImplementedError("Problem 2 Incomplete")
 
-
+#%%
 # Problem 3
 def polynomial_fit():
     """Find the least squares polynomials of degree 3, 6, 9, and 12 that relate
@@ -66,6 +78,8 @@ def plot_ellipse(a, b, c, d, e):
     plt.plot(r*cos_t, r*sin_t)
     plt.gca().set_aspect("equal", "datalim")
 
+
+#%% DO NOT DO
 # Problem 4
 def ellipse_fit():
     """Calculate the parameters for the ellipse that best fits the data in
@@ -107,3 +121,8 @@ def qr_algorithm(A, N=50, tol=1e-12):
         ((n,) ndarray): The eigenvalues of A.
     """
     raise NotImplementedError("Problem 6 Incomplete")
+
+
+if __name__ == "__main__":
+    pass 
+    line_fit()
