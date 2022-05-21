@@ -13,7 +13,7 @@
 
 import numpy as np
 from matplotlib import pyplot as plt
-from scipy import linalg
+from scipy import linalg as la
 
 # Problem 1
 def least_squares(A, b):
@@ -27,9 +27,9 @@ def least_squares(A, b):
     Returns:
         x ((n, ) ndarray): The solution to the normal equations.
     """
-    q, r = linalg.qr(A, mode = 'economic')
+    q, r = la.qr(A, mode = 'economic')
     y = np.dot(q.T, b)
-    x = linalg.solve(r, y)
+    x = la.solve(r, y)
     return x
     
 A = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
@@ -37,10 +37,9 @@ b = np.array([3, 2, 1])
 print(least_squares(A, b))
 
 
-#%%    
+  
 # Problem 2
-import numpy as np
-import matplotlib as plt
+
 
 def line_fit():
     """Find the least squares line that relates the year to the housing price
@@ -49,37 +48,50 @@ def line_fit():
     """
     
     a, b = np.load(r"\\wsl.localhost\Ubuntu\home\beethes\PythonEssentials\LeastSquares_Eigenvalues\housing.npy").T
-    A = np.column_stack((a)).T
+    A = np.vstack((a, np.ones_like(a))).T
     B = b.T
-    L = (least_squares(A, b)[0])
-    print(A)
-    print(B)
-    q = (least_squares(A, B))
-    y = q*x
-    print(q)
-   
-
+    q, r = (least_squares(A, B))
+    print(A, B)
+    plt.scatter(A[:, 0], B)
     
     x_ax = np.linspace(0, 16, 100) 
-    plt.pyplot.scatter(A, B)
-    plt.pyplot(x_ax, y)
+    L = q*x_ax + r
+    plt.plot(x_ax, L)
+    
     plt.show()
     
-    #x_ax = first column of A
-    #y_ax = b
-  #  plt.plot(x_ax, y_ax)
-    
 line_fit()   
- #   raise NotImplementedError("Problem 2 Incomplete")
+
 
 #%%
 # Problem 3
+
+import numpy as np
+from matplotlib import pyplot as plt
+from scipy import linalg as la
+
+
 def polynomial_fit():
     """Find the least squares polynomials of degree 3, 6, 9, and 12 that relate
     the year to the housing price index for the data in housing.npy. Plot both
     the data points and the least squares polynomials in individual subplots.
     """
-    raise NotImplementedError("Problem 3 Incomplete")
+    a, b = np.load(r"\\wsl.localhost\Ubuntu\home\beethes\PythonEssentials\LeastSquares_Eigenvalues\housing.npy").T
+    A = np.vstack((a, np.ones_like(a))).T
+    B = b.T
+    plt.scatter(A[:, 0], B)
+    
+    x_ax = np.linspace(0, 16, 100) 
+    lsqa, lsqb = la.lstsq(A, B)[0]
+    lin = lsqa*x_ax + lsqb
+    plt.plot(x_ax, lin)
+    fit = np.poly1d(A[:,0])
+    print(lsqa, lsqb, fit)
+    plt.show()
+
+polynomial_fit()
+    
+
 
 
 def plot_ellipse(a, b, c, d, e):
@@ -94,50 +106,3 @@ def plot_ellipse(a, b, c, d, e):
     plt.gca().set_aspect("equal", "datalim")
 
 
-#%% DO NOT DO
-# Problem 4
-def ellipse_fit():
-    """Calculate the parameters for the ellipse that best fits the data in
-    ellipse.npy. Plot the original data points and the ellipse together, using
-    plot_ellipse() to plot the ellipse.
-    """
-    raise NotImplementedError("Problem 4 Incomplete")
-
-
-# Problem 5
-def power_method(A, N=20, tol=1e-12):
-    """Compute the dominant eigenvalue of A and a corresponding eigenvector
-    via the power method.
-
-    Parameters:
-        A ((n,n) ndarray): A square matrix.
-        N (int): The maximum number of iterations.
-        tol (float): The stopping tolerance.
-
-    Returns:
-        (float): The dominant eigenvalue of A.
-        ((n,) ndarray): An eigenvector corresponding to the dominant
-            eigenvalue of A.
-    """
-    raise NotImplementedError("Problem 5 Incomplete")
-
-
-# Problem 6
-def qr_algorithm(A, N=50, tol=1e-12):
-    """Compute the eigenvalues of A via the QR algorithm.
-
-    Parameters:
-        A ((n,n) ndarray): A square matrix.
-        N (int): The number of iterations to run the QR algorithm.
-        tol (float): The threshold value for determining if a diagonal S_i
-            block is 1x1 or 2x2.
-
-    Returns:
-        ((n,) ndarray): The eigenvalues of A.
-    """
-    raise NotImplementedError("Problem 6 Incomplete")
-
-
-if __name__ == "__main__":
-    pass 
-    line_fit()
