@@ -81,6 +81,8 @@ def polynomial_fit():
     B = b.T
     plt.scatter(A[:, 0], B)
     
+    3deg = polyld(polyfit.)
+    
     x_ax = np.linspace(0, 16, 100) 
     lsqa, lsqb = la.lstsq(A, B)[0]
     lin = lsqa*x_ax + lsqb
