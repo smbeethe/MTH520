@@ -47,7 +47,7 @@ def line_fit():
     squares line.
     """
     
-    a, b = np.load(r"\\wsl.localhost\Ubuntu\home\beethes\PythonEssentials\LeastSquares_Eigenvalues\housing.npy").T
+    a, b = np.load("housing.npy").T
     A = np.vstack((a, np.ones_like(a))).T
     B = b.T
     q, r = (least_squares(A, B))
