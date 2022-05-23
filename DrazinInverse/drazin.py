@@ -1,8 +1,8 @@
 # drazin.py
 """Volume 1: The Drazin Inverse.
-<Name>
-<Class>
-<Date>
+<Sarah Beethe>
+<MTH520>
+<5/22/2022>
 """
 
 import numpy as np
@@ -50,9 +50,24 @@ def is_drazin(A, Ad, k):
     Returns:
         (bool) True of Ad is the Drazin inverse of A, False otherwise.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    k = index(A)
+    AdA = np.dot(A, Ad)
+    cdn1 = AdA == np.dot(Ad, A)
+    cdn2 = np.dot(A[k+1], Ad) == A[k]
+    cdn3 = np.dot(AdA, Ad) == Ad
+        
+    print(A, '\n', Ad, '\n', k)
+    print(cdn1, '/n', cdn2, '/n', cdn3)
+        
+  #  return (cdn1, cdn2, cdn3)
 
 
+
+A = np.array([[1, 3, 0, 0], [0, 1, 3, 0], [0, 0, 1, 3], [0, 0, 0, 0]])
+Ad = np.array([[1, -3, 9, 81], [0, 1, -3, -18], [0, 0, 1, 3], [0, 0, 0, 0]])
+k = index(A, tol=1e-5)
+is_drazin(A, Ad, k)
+#%%
 # Problem 2
 def drazin_inverse(A, tol=1e-4):
     """Compute the Drazin inverse of A.

@@ -68,7 +68,7 @@ line_fit()
 
 import numpy as np
 from matplotlib import pyplot as plt
-from scipy import linalg as la
+
 
 
 def polynomial_fit():
@@ -79,16 +79,36 @@ def polynomial_fit():
     a, b = np.load(r"\\wsl.localhost\Ubuntu\home\beethes\PythonEssentials\LeastSquares_Eigenvalues\housing.npy").T
     A = np.vstack((a, np.ones_like(a))).T
     B = b.T
-    plt.scatter(A[:, 0], B)
     
-    3deg = polyld(polyfit.)
+    polyline = np.linspace(0, 16, 100)
     
-    x_ax = np.linspace(0, 16, 100) 
-    lsqa, lsqb = la.lstsq(A, B)[0]
-    lin = lsqa*x_ax + lsqb
-    plt.plot(x_ax, lin)
-    fit = np.poly1d(A[:,0])
-    print(lsqa, lsqb, fit)
+    m3 = plt.subplot(221)
+    model3 = np.poly1d(np.polyfit(A[:, 0], B, 3))
+    m3.plot(polyline, model3(polyline), 'g')
+    m3.scatter(A[:, 0], B, 4)
+    plt.title("3rd Degree")
+    
+    m6 = plt.subplot(222)
+    model6 = np.poly1d(np.polyfit(A[:, 0], B, 6))
+    m6.plot(polyline, model6(polyline), 'r')
+    m6.scatter(A[:, 0], B, 4)
+    plt.title("6th Degree")
+    
+    m9 = plt.subplot(223)
+    model9 = np.poly1d(np.polyfit(A[:, 0], B, 9))
+    m9.plot(polyline, model9(polyline), 'm')
+    m9.scatter(A[:, 0], B, 4)
+    plt.title("9th Degree")
+    
+    m12 = plt.subplot(224)
+    model12 = np.poly1d(np.polyfit(A[:, 0], B, 12))
+    m12.plot(polyline, model12(polyline), 'y')
+    m12.scatter(A[:, 0], B, 4)
+    plt.title("12th Degree")
+    
+    plt.suptitle("Polynomial Fit of Housing Price Index")
+    plt.tight_layout(pad = 0.4)
+    
     plt.show()
 
 polynomial_fit()
@@ -96,15 +116,15 @@ polynomial_fit()
 
 
 
-def plot_ellipse(a, b, c, d, e):
-    """Plot an ellipse of the form ax^2 + bx + cxy + dy + ey^2 = 1."""
-    theta = np.linspace(0, 2*np.pi, 200)
-    cos_t, sin_t = np.cos(theta), np.sin(theta)
-    A = a*(cos_t**2) + c*cos_t*sin_t + e*(sin_t**2)
-    B = b*cos_t + d*sin_t
-    r = (-B + np.sqrt(B**2 + 4*A)) / (2*A)
+#def plot_ellipse(a, b, c, d, e):
+   # """Plot an ellipse of the form ax^2 + bx + cxy + dy + ey^2 = 1."""
+  #  theta = np.linspace(0, 2*np.pi, 200)
+   # cos_t, sin_t = np.cos(theta), np.sin(theta)
+   # A = a*(cos_t**2) + c*cos_t*sin_t + e*(sin_t**2)
+   # B = b*cos_t + d*sin_t
+   # r = (-B + np.sqrt(B**2 + 4*A)) / (2*A)
 
-    plt.plot(r*cos_t, r*sin_t)
-    plt.gca().set_aspect("equal", "datalim")
+   # plt.plot(r*cos_t, r*sin_t)
+   # plt.gca().set_aspect("equal", "datalim")
 
 
