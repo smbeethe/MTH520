@@ -26,7 +26,7 @@ def least_squares(A, b):
 
     Returns:
         x ((n, ) ndarray): The solution to the normal equations. """
-        
+
     q, r = la.qr(A, mode = 'economic')
     y = np.dot(q.T, b)
     x = la.solve(r, y)
