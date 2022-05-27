@@ -16,3 +16,27 @@ IndentationError while loading 'matplotlib_intro.py': unexpected indent (matplot
 
 -------------------------------------------------------------------------------
 
+05/27/22 17:43
+
+Problem 1 (10 points):
+Score += 10
+
+Problem 2 (10 points):
+Score += 10
+
+Problem 3 (10 points):
+Score += 10
+
+Problem 4 (5 points):
+Score += 5
+
+Problem 6 (10 points):
+AttributeError: module 'BeetheSarah.MatplotlibIntro.matplotlib_intro' has no attribute 'prob6'
+
+Code Quality (5 points):
+NotImplementedError: prob6() not found
+
+Total score: 35/50 = 70.0%
+
+-------------------------------------------------------------------------------
+
