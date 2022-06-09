@@ -1,0 +1,30 @@
+06/09/22 20:10
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+TypeError: Invalid return type 'NoneType'
+
+Problem 3 (5 points):
+Incorrect optimizer
+	Correct response: [5. 2. 0. 2. 0. 4.]
+	Student response: [2.635 4.365 0.803 1.197 1.562 2.438]
+Incorrect optimial value
+	Correct response: 86.00000000262983
+	Student response: 12.999999999999998
+Score += 0
+
+Problem 4 (5 points):
+Score += 5
+
+Problem 5 (10 points):
+Score += 10
+
+Code Quality (20 points):
+Score += 20
+
+Total score: 40/50 = 80.0%
+
+-------------------------------------------------------------------------------
+
