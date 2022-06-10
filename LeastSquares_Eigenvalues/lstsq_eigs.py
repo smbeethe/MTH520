@@ -76,7 +76,7 @@ def polynomial_fit():
     the year to the housing price index for the data in housing.npy. Plot both
     the data points and the least squares polynomials in individual subplots.
     """
-    a, b = np.load('housing.npy').T
+    a, b = np.load("housing.npy").T
     A = np.vstack((a, np.ones_like(a))).T
     B = b.T
     
