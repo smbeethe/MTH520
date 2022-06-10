@@ -142,7 +142,7 @@ prob4()
 
 
 # %%
-# roblem 6
+# Problem 6
 
 import numpy as np
 from matplotlib import pyplot as plt
@@ -151,7 +151,7 @@ def prob6():
     x = np.linspace(-2*np.pi, 2*np.pi, 100)
     y = np.copy(x)
     X, Y = np.meshgrid(x, y)
-    Z = (np.sin(X) * np.sin(Y))/(X*Y)
+    Z = ((np.sin(X) * np.sin(Y))/(X*Y))
 
     plt.subplot(121)
     plt.pcolormesh(X, Y, Z, cmap = "viridis")
