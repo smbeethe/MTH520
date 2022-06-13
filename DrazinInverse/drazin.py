@@ -59,8 +59,9 @@ def is_drazin(A, Ad, k):
         cdn_1 = np.allclose(AAd, AdA)
         cdn_2 = np.allclose(Ak1Ad, Ak)
         cdn_3 = np.allclose(AdAAd, Ad)
-        return cdn_1 == cdn_2 == cdn_3
-    
+        return cdn_1 and cdn_2 and cdn_3
+    else:
+        return False
 
 
 A = np.array([[1, 3, 0, 0], [0, 1, 3, 0], [0, 0, 1, 3], [0, 0, 0, 0]])
